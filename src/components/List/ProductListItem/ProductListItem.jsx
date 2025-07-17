@@ -13,6 +13,7 @@ const ProductListItem = ({ id, image, category, name, price }) => {
 	useEffect(() => {
 		addItem({
 			id: id,
+            image: image.thumbnail,
 			name: name,
 			amount: amount,
 			price: price,
