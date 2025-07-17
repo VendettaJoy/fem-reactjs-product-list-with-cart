@@ -52,7 +52,17 @@ const cartReducer = (state, action) => {
 	}
 
 	if (action.type === "REMOVE") {
-        // remove item
+        // remove item from cart using filter
+        const updatedItems = state.items.filter((item) => item.id !== action.id)
+        // calculate total order price using reduce
+        const updatedTotalPrice = updatedItems.reduce((accumulator, item) => {
+            return accumulator + item.amount * item.price
+        }, 0)
+
+        return {
+            items: updatedItems,
+            totalPrice: updatedTotalPrice,
+        }
 	}
 
 	return DEFAULT_CART_STATE;
@@ -79,7 +89,7 @@ const CartProvider = ({ children }) => {
 		removeItem: handleRemoveItem,
 	};
 
-	console.log(cartState.items, cartState.totalPrice);
+	// console.log(cartState.items, cartState.totalPrice);
 
 	return (
 		<CartContext.Provider value={cartContext}>
