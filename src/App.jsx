@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductList from "./components/ProductList/ProductList";
 import CartProvider from "./context/CartContext";
+import ProductList from "./components/List/ProductList/ProductList";
+import Cart from "./components/Cart/Cart/Cart";
 
 const App = () => {
 	const [list, setList] = useState([]);
@@ -26,6 +27,7 @@ const App = () => {
 		<CartProvider>
 			<main>
 				<ProductList list={list} />
+                <Cart />
 			</main>
 		</CartProvider>
 	);
