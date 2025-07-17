@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import ProductList from "./components/ProductList/ProductList";
 import axios from "axios";
+import ProductList from "./components/ProductList/ProductList";
+import CartProvider from "./context/CartContext";
 
 const App = () => {
 	const [list, setList] = useState([]);
@@ -22,9 +23,11 @@ const App = () => {
 	}, []);
 
 	return (
-		<main>
-			<ProductList list={list} />
-		</main>
+		<CartProvider>
+			<main>
+				<ProductList list={list} />
+			</main>
+		</CartProvider>
 	);
 };
 export default App;
