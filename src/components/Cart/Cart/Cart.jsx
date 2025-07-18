@@ -4,9 +4,9 @@ import EmptyCartIllustration from "/images/illustration-empty-cart.svg";
 import CartList from "../CartList/CartList";
 
 const Cart = () => {
-	const { items, totalPrice } = useContext(CartContext);
+	const { cart, totalPrice } = useContext(CartContext);
 
-	const totalItemsInCart = items.reduce((accumulator, item) => {
+	const totalItemsInCart = cart.reduce((accumulator, item) => {
 		return accumulator + item.amount;
 	}, 0);
 	const orderTotal = `$${totalPrice.toFixed(2)}`;
@@ -14,9 +14,9 @@ const Cart = () => {
 	return (
 		<>
 			<h2>Your Cart ({totalItemsInCart})</h2>
-			{items.length > 0 ? (
+			{cart.length > 0 ? (
 				<div>
-					<CartList list={items} />
+					<CartList list={cart} />
 					<p>Order Total {orderTotal}</p>
                     <button type="button">Confirm Order</button>
 				</div>
