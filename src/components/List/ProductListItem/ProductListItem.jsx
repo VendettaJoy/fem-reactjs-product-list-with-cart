@@ -5,19 +5,27 @@ import IncrementIcon from "/images/icon-increment-quantity.svg";
 import DecrementIcon from "/images/icon-decrement-quantity.svg";
 
 const ProductListItem = ({ id, image, category, name, price }) => {
-	const { addItem } = useContext(CartContext);
+	const { addItem, removeItem } = useContext(CartContext);
 	const [amount, setAmount] = useState(0);
 
 	const itemPrice = `$${price.toFixed(2)}`;
 
 	useEffect(() => {
-		addItem({
-			id: id,
-            image: image.thumbnail,
-			name: name,
-			amount: amount,
-			price: price,
-		});
+		if (amount > 0) {
+			addItem({
+				id: id,
+				image: image.thumbnail,
+				name: name,
+				amount: amount,
+				price: price,
+				setAmount: setAmount,
+			});
+		} else {
+            removeItem({
+                id: id,
+				setAmount: setAmount,
+            })
+        }
 	}, [amount]);
 
 	const handleAddToCartClick = () => {
@@ -43,8 +51,8 @@ const ProductListItem = ({ id, image, category, name, price }) => {
 			{/* if item amount is less than 1 */}
 			{amount < 1 && (
 				<button type="button" onClick={handleAddToCartClick}>
-					<img src={CartIcon} alt="" /> 
-                    Add to Cart
+					<img src={CartIcon} alt="" />
+					Add to Cart
 				</button>
 			)}
 

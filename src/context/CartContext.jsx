@@ -2,11 +2,11 @@ import { createContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
 
 export const CartContext = createContext({
-    menu: [],
-    cart: [],
-    totalPrice: 0,
-    addItem: (_item) => {},
-    removeItem: (_id) => {},
+	menu: [],
+	cart: [],
+	totalPrice: 0,
+	addItem: (_item) => {},
+	removeItem: (_item) => {},
 });
 
 const DEFAULT_CART_STATE = {
@@ -28,15 +28,7 @@ const cartReducer = (state, action) => {
 			// if the item exists, update the amount
 			const updatedItem = { ...existingItem, amount: action.item.amount };
 			updatedCart = [...state.cart];
-
-			// check to see if the amount of the item equals 0
-			updatedItem.amount === 0
-				? // if 0, remove from cart
-				  (updatedCart = updatedCart.filter(
-						(item) => item.id !== action.item.id
-				  ))
-				: // else update existing item with the new amount
-				  (updatedCart[existingItemIndex] = updatedItem);
+			updatedCart[existingItemIndex] = updatedItem;
 		} else {
 			// if the item doesn't exist, add it to the cart
 			updatedCart = state.cart.concat(action.item);
@@ -55,7 +47,9 @@ const cartReducer = (state, action) => {
 
 	if (action.type === "REMOVE") {
 		// remove item from cart using filter
-		const updatedCart = state.cart.filter((item) => item.id !== action.id);
+		const updatedCart = state.cart.filter(
+			(item) => item.id !== action.item.id
+		);
 		// calculate total order price using reduce
 		const updatedTotalPrice = updatedCart.reduce((accumulator, item) => {
 			return accumulator + item.amount * item.price;
@@ -97,8 +91,11 @@ const CartProvider = ({ children }) => {
 		dispatchCartAction({ type: "ADD", item: item });
 	};
 
-	const handleRemoveItem = (id) => {
-		dispatchCartAction({ type: "REMOVE", id: id });
+	const handleRemoveItem = (item) => {
+		dispatchCartAction({ type: "REMOVE", item: item });
+
+		// reset item count to 0
+		item.setAmount(0);
 	};
 
 	const cartContext = {

@@ -6,11 +6,7 @@ const CartList = ({ list }) => {
 			{list.map((item) => (
 				<CartListItem
 					key={item.id}
-					id={item.id}
-					image={item.image}
-					name={item.name}
-					amount={item.amount}
-					price={item.price}
+                    item={item}
 				/>
 			))}
 		</ul>
