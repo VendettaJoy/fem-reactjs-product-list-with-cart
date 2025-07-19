@@ -7,6 +7,7 @@ export const CartContext = createContext({
 	totalPrice: 0,
 	addItem: (_item) => {},
 	removeItem: (_item) => {},
+	reset: () => {},
 });
 
 const DEFAULT_CART_STATE = {
@@ -98,12 +99,18 @@ const CartProvider = ({ children }) => {
 		item.setAmount(0);
 	};
 
+	const handleReset = () => {
+		// empty the cart and reset all item amounts to 0
+		cartState.cart.map((item) => handleRemoveItem(item));
+	};
+
 	const cartContext = {
 		menu: list,
 		cart: cartState.cart,
 		totalPrice: cartState.totalPrice,
 		addItem: handleAddItem,
 		removeItem: handleRemoveItem,
+		reset: handleReset,
 	};
 
 	// console.log(cartState.cart, cartState.totalPrice);
