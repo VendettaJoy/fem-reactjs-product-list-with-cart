@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
+import CartList from "./CartList";
 import EmptyCartIllustration from "/images/illustration-empty-cart.svg";
-import CartList from "../CartList/CartList";
 
 const Cart = ({ setIsModalOpen }) => {
 	const { cart, totalPrice } = useContext(CartContext);
