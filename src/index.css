@@ -2,7 +2,7 @@
 	font-display: swap;
 	font-family: "Red Hat Text";
 	font-style: normal;
-	font-weight: var(--fw-reg);
+	font-weight: 400;
 	src: url(/fonts/static/RedHatText-Regular.ttf) format("truetype");
 }
 
@@ -10,7 +10,7 @@
 	font-display: swap;
 	font-family: "Red Hat Text";
 	font-style: normal;
-	font-weight: var(--fw-semi);
+	font-weight: 600;
 	src: url(/fonts/static/RedHatText-SemiBold.ttf) format("truetype");
 }
 
@@ -18,7 +18,7 @@
 	font-display: swap;
 	font-family: "Red Hat Text";
 	font-style: normal;
-	font-weight: var(--fw-bold);
+	font-weight: 700;
 	src: url(/fonts/static/RedHatText-Bold.ttf) format("truetype");
 }
 
@@ -40,6 +40,29 @@
 	--fw-reg: 400;
 	--fw-semi: 600;
 	--fw-bold: 700;
+
+	/* Custom Variables */
+
+    /* Base */
+	--body-background: var(--c-rose-50);
+	--body-foreground: var(--c-rose-900);
+
+    /* Product List */
+	--cart-btn-background: hsl(0, 100%, 100%);
+	--cart-btn-border: 2px solid var(--c-rose-300);
+
+	--amount-btn-background: var(--c-red);
+	--amount-btn-foreground: var(--c-rose-50);
+	--amount-btn-border: 2px solid var(--c-red);
+
+	--amount-toggle-background: var(--c-red);
+	--amount-toggle-foreground: var(--c-rose-50);
+	--amount-toggle-border: 1.75px solid var(--c-rose-50);
+
+	--item-category: var(--c-rose-500);
+	--item-price: var(--c-red);
+	--item-border: 3px solid transparent;
+	--item-selected-border: 3px solid var(--c-red);
 }
 
 @layer reset {
@@ -90,6 +113,11 @@
 		font-family: var(--ff-default);
 		font-size: var(--fs-default);
 		font-weight: var(--fw-reg);
+	}
+
+	body {
+		background-color: var(--body-background);
+		color: var(--body-foreground);
 	}
 
 	body.modal-open {
