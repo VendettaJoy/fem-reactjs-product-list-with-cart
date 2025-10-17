@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import CrossIcon from "/images/icon-remove-item.svg";
+import classes from "./cart.module.css";
 
 const CartListItem = ({ item }) => {
 	const { removeItem } = useContext(CartContext);
@@ -10,13 +11,21 @@ const CartListItem = ({ item }) => {
 	const totalPrice = `$${(item.price * item.amount).toFixed(2)}`;
 
 	return (
-		<li>
-			<img src={`${item.image}`} alt="" />
-			<p>{item.name}</p>
-			<p>{itemAmount}</p>
-			<p>{itemPrice}</p>
-			<p>{totalPrice}</p>
-			<button type="button" onClick={() => removeItem(item)}>
+		<li className={classes.cartItem}>
+			{/* <img src={`${item.image}`} alt="" /> */}
+			<div className={classes.cartItemInfo}>
+				<p>{item.name}</p>
+				<div className={classes.cartItemAmtPrice}>
+					<p>{itemAmount}</p>
+					<p>{itemPrice}</p>
+					<p>{totalPrice}</p>
+				</div>
+			</div>
+			<button
+				type="button"
+				onClick={() => removeItem(item)}
+				className={classes.cartItemDelBtn}
+			>
 				<img src={CrossIcon} alt="" />
 			</button>
 		</li>

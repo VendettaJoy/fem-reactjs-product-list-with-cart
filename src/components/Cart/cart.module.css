@@ -1,0 +1,130 @@
+.cart {
+	background-color: var(--cart-background);
+	padding: 1.5rem;
+	margin-block-start: 2rem;
+	margin-block-end: 0.5rem;
+	border-radius: 0.75rem;
+}
+
+.cartHeading {
+	color: var(--cart-heading);
+	font-weight: var(--fw-bold);
+}
+
+.cartContent {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Cart Empty */
+
+.cartEmpty {
+	align-items: center;
+	gap: 1rem;
+
+	padding-block-start: 2rem;
+	padding-block-end: 1rem;
+}
+
+.cartEmptyText {
+	color: var(--cart-empty-text);
+	font-weight: var(--fw-semi);
+}
+
+/* Cart Not Empty */
+
+.cartNotEmpty {
+	padding-block-start: 1rem;
+	gap: 1.5rem;
+}
+
+.cartItems {
+	list-style: none;
+	padding: 0;
+}
+
+.cartItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-block-end: 1rem;
+	border-bottom: var(--item-btm-border);
+}
+
+.cartItems > li:not(:first-child) {
+	padding-block-start: 1rem;
+}
+
+.cartItemInfo {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.cartItemInfo > p {
+	font-weight: var(--fw-semi);
+}
+
+.cartItemAmtPrice {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.cartItemAmtPrice > p:nth-child(1) {
+	color: var(--item-amount);
+	font-weight: var(--fw-semi);
+	padding-inline-end: 0.5rem;
+}
+
+.cartItemAmtPrice > p:nth-child(2) {
+	color: var(--item-price);
+	font-weight: var(--fw-semi);
+}
+
+.cartItemAmtPrice > p:nth-child(3) {
+	color: var(--item-total-price);
+	font-weight: var(--fw-semi);
+}
+
+.cartItemDelBtn {
+	cursor: pointer;
+	background-color: var(--item-del-btn-background);
+	border: var(--item-del-btn-border);
+	border-radius: 50%;
+	padding: 0.25rem;
+}
+
+.cartNotEmpty > p {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.cartTotal {
+	font-weight: var(--fw-bold);
+	font-size: 1.5rem;
+}
+
+.cartDelivery {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: var(--delivery-background);
+	border-radius: 0.5rem;
+	padding-block: 0.75rem;
+
+	span {
+		font-weight: var(--fw-semi);
+	}
+}
+
+.cartConfirmBtn {
+	cursor: pointer;
+	border: var(--confirm-btn-border);
+	background-color: var(--confirm-btn-background);
+	color: var(--confirm-btn-foreground);
+	font-weight: var(--fw-semi);
+	border-radius: 100vh;
+	padding-block: 0.75rem;
+}
