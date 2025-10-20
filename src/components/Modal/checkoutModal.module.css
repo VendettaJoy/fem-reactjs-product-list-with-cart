@@ -104,3 +104,8 @@
 	border-radius: 100vh;
 	padding-block: 0.75rem;
 }
+
+.newOrderBtn:hover {
+    background-color: var(--new-order-btn-hover-background);
+    border: var(--new-order-btn-hover-border);
+}

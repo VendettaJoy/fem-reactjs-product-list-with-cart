@@ -93,6 +93,14 @@
 	padding: 0.25rem;
 }
 
+.cartItemDelBtn:hover {
+    border: var(--item-del-btn-hover-border);
+}
+
+.cartItemDelBtn:hover img {
+    filter: var(--item-del-btn-hover-svg-filter);
+}
+
 .cartNotEmpty > p {
 	display: flex;
 	justify-content: space-between;
@@ -127,4 +135,9 @@
 	font-weight: var(--fw-semi);
 	border-radius: 100vh;
 	padding-block: 0.75rem;
+}
+
+.cartConfirmBtn:hover {
+    background-color: var(--confirm-btn-hover-background);
+    border: var(--confirm-btn-hover-border)
 }

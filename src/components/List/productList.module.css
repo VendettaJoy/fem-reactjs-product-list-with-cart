@@ -47,8 +47,11 @@
 	gap: 0.5rem;
 
 	background-color: var(--cart-btn-background);
-	color: var(--cart-btn-foreground);
 	border: var(--cart-btn-border);
+}
+
+.btnAddToCart:hover {
+    color: var(--cart-btn-hover-foreground);
 }
 
 .btnAmount {
@@ -58,6 +61,7 @@
 
 	background-color: var(--amount-btn-background);
 	color: var(--amount-btn-foreground);
+    font-weight: var(--fw-semi);
 	border: var(--amount-btn-border);
 }
 
@@ -66,13 +70,21 @@
 	width: 1.25rem;
 	height: 1.25rem;
 	background-color: var(--amount-toggle-background);
-	color: var(--amount-toggle-foreground);
 	border: var(--amount-toggle-border);
 	border-radius: 100vh;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.amountToggle:hover {
+    background-color: var(--amount-toggle-hover-background);
+}
+
+.amountToggle:hover img {
+    filter: var(--amount-toggle-svg-hover-filter);
+
 }
 
 .itemCategory {
