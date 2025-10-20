@@ -17,6 +17,9 @@ const CheckoutModal = ({ isModalOpen, setIsModalOpen }) => {
 
 		// remove the modal-open class from the document body
 		document.body.classList.remove("modal-open");
+
+        // scroll to top
+        window.scrollTo(0,0);
 	};
 
 	return (
