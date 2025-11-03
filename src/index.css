@@ -26,6 +26,7 @@
 	/* Colours */
 	--c-red: hsl(14, 86%, 42%);
 	--c-green: hsl(159, 69%, 38%);
+	--c-white: hsl(0, 100%, 100%);
 
 	--c-rose-50: hsl(20, 50%, 98%);
 	--c-rose-100: hsl(13, 31%, 94%);
@@ -43,13 +44,14 @@
 
 	/* Custom Variables */
 
-    /* Base */
+	/* Base */
 	--body-background: var(--c-rose-50);
 	--body-foreground: var(--c-rose-900);
 
-    /* Product List */
-	--cart-btn-background: hsl(0, 100%, 100%);
+	/* Product List */
+	--cart-btn-background: var(--c-white);
 	--cart-btn-border: 2px solid var(--c-rose-300);
+	--cart-btn-hover-foreground: var(--c-red);
 
 	--amount-btn-background: var(--c-red);
 	--amount-btn-foreground: var(--c-rose-50);
@@ -57,12 +59,56 @@
 
 	--amount-toggle-background: var(--c-red);
 	--amount-toggle-foreground: var(--c-rose-50);
-	--amount-toggle-border: 1.75px solid var(--c-rose-50);
+	--amount-toggle-border: 1px solid var(--c-rose-50);
+	--amount-toggle-hover-background: var(--c-rose-50);
+	--amount-toggle-hover-foreground: var(--c-red);
+	--amount-toggle-svg-hover-filter: brightness(0) saturate(100%) invert(33%)
+		sepia(59%) saturate(2262%) hue-rotate(352deg) brightness(78%)
+		contrast(101%);
 
 	--item-category: var(--c-rose-500);
 	--item-price: var(--c-red);
 	--item-border: 3px solid transparent;
 	--item-selected-border: 3px solid var(--c-red);
+
+	/* Cart */
+	--cart-background: var(--c-white);
+	--cart-heading: var(--c-red);
+	--cart-empty-text: var(--c-rose-400);
+
+	--cart-item-amount: var(--c-red);
+	--cart-item-price: var(--c-rose-400);
+	--cart-item-total-price: var(--c-rose-500);
+	--item-btm-border: 1px solid var(--c-rose-100);
+	--item-del-btn-background: var(--c-white);
+	--item-del-btn-border: 2px solid var(--c-rose-300);
+	--item-del-btn-hover-border: 2px solid var(--c-rose-500);
+	--item-del-btn-hover-svg-filter: brightness(0) saturate(100%) invert(44%)
+		sepia(20%) saturate(566%) hue-rotate(325deg) brightness(90%)
+		contrast(95%);
+
+	--delivery-background: var(--c-rose-50);
+
+	--confirm-btn-background: var(--c-red);
+	--confirm-btn-foreground: var(--c-rose-50);
+	--confirm-btn-border: 2px solid var(--c-red);
+    --confirm-btn-hover-background: var(--c-rose-500);
+    --confirm-btn-hover-border: 2px solid var(--c-rose-500);
+
+	/* Modal */
+	--modal-text: var(--c-rose-500);
+
+	--order-summary-background: var(--c-rose-50);
+
+	--order-summary-item-amount: var(--c-red);
+	--order-summary-item-price: var(--c-rose-500);
+	--order-summary-item-total-price: var(--c-rose-900);
+
+	--new-order-btn-background: var(--c-red);
+	--new-order-btn-foreground: var(--c-rose-50);
+	--new-order-btn-border: 2px solid var(--c-red);
+    --new-order-btn-hover-background: var(--c-rose-500);
+    --new-order-btn-hover-border: 2px solid var(--c-rose-500);
 }
 
 @layer reset {
@@ -109,6 +155,11 @@
 }
 
 @layer base {
+	html,
+	body {
+		scroll-behavior: smooth;
+	}
+
 	html {
 		font-family: var(--ff-default);
 		font-size: var(--fs-default);
