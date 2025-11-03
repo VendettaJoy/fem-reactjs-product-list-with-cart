@@ -3,5 +3,14 @@
     flex-direction: column;
     margin-inline: 1.5rem;
     margin-block: 1.25rem;
+
+    /* Desktop */
+    @media (min-width: 1400px) {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-inline: 7rem;
+        margin-block: 5rem;
+    }
 }
+
 

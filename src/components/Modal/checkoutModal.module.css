@@ -3,8 +3,11 @@
 
 	padding-block: 2.25rem 1.5rem;
 	padding-inline: 1.5rem;
-	border-top-left-radius: 1rem;
-	border-top-right-radius: 1rem;
+	
+    /* Desktop */
+    @media (min-width: 1400px) {
+        padding-inline: 2.5rem;
+    }
 }
 
 .orderConfirmation > h1 {

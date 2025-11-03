@@ -4,6 +4,17 @@
 	margin-block-start: 2rem;
 	margin-block-end: 0.5rem;
 	border-radius: 0.75rem;
+
+    /* Desktop */
+    @media (min-width: 1400px) {
+        margin-inline-start: 2rem;
+        margin-block: 0rem;
+        width: 38.5rem;
+    }
+
+    @media (min-width: 1600px) {
+        width: 30rem;
+    }
 }
 
 .cartHeading {
@@ -70,18 +81,18 @@
 }
 
 .cartItemAmtPrice > p:nth-child(1) {
-	color: var(--item-amount);
+	color: var(--cart-item-amount);
 	font-weight: var(--fw-semi);
 	padding-inline-end: 0.5rem;
 }
 
 .cartItemAmtPrice > p:nth-child(2) {
-	color: var(--item-price);
+	color: var(--cart-item-price);
 	font-weight: var(--fw-semi);
 }
 
 .cartItemAmtPrice > p:nth-child(3) {
-	color: var(--item-total-price);
+	color: var(--cart-item-total-price);
 	font-weight: var(--fw-semi);
 }
 

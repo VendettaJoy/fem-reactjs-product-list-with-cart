@@ -4,10 +4,16 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0,0, 0.8);
+    background-color: rgba(0, 0,0, 0.5);
 
     display: flex;
     align-items: end;
+
+    /* Desktop */
+    @media (min-width: 800px) {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .modalBox {
@@ -17,4 +23,11 @@
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     overflow-y: scroll;
+
+    /* Desktop */
+    @media (min-width: 800px) {
+        width: 37rem;
+        height: 42.5rem;
+        border-radius: 0.75rem;
+    }
 }
