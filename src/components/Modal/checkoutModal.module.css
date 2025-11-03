@@ -62,6 +62,14 @@
     overflow: hidden;
 	white-space: nowrap;
 	text-overflow: "...";
+
+    @media (min-width: 420px) {
+        width: 12rem;
+    }
+
+    @media (min-width: 500px) {
+        overflow: visible;
+    }
 }
 
 .orderSummaryItem > div > div {

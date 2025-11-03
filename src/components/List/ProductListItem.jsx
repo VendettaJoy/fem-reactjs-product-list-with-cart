@@ -42,7 +42,7 @@ const ProductListItem = ({ id, image, category, name, price }) => {
 	};
 
 	return (
-		<li>
+		<li className={classes.item}>
 			<div className={classes.container}>
 				<picture>
 					<source
