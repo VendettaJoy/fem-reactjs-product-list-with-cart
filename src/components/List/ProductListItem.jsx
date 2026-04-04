@@ -110,9 +110,9 @@ const ProductListItem = ({ id, image, category, name, price }) => {
 				)}
 			</div>
 
-			<p className={classes.itemCategory}>{category}</p>
-			<p className={classes.itemName}>{name}</p>
-			<p className={classes.itemPrice}>{itemPrice}</p>
+			<p className={classes.itemCategory} aria-label="product category">{category}</p>
+			<p className={classes.itemName} aria-label="product name">{name}</p>
+			<p className={classes.itemPrice} aria-label="product price">{itemPrice}</p>
 		</li>
 	);
 };
