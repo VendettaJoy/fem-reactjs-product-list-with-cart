@@ -35,7 +35,7 @@ const Cart = ({ setIsModalOpen }) => {
 				{cart.length > 0 ? (
 					<>
 						<CartList list={cart} />
-						<p>
+						<p aria-atomic aria-live="polite">
 							Order Total{" "}
 							<span className={classes.cartTotal}>
 								{orderTotal}
