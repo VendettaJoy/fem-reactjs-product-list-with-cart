@@ -25,6 +25,7 @@ const CartListItem = ({ item }) => {
 				type="button"
 				onClick={() => removeItem(item)}
 				className={classes.cartItemDelBtn}
+                aria-label={`remove ${item.name} from cart`}
 			>
 				<img src={CrossIcon} alt="" />
 			</button>
