@@ -8,6 +8,18 @@ import classes from "./checkoutModal.module.css";
 const CheckoutModal = ({ isModalOpen, setIsModalOpen }) => {
 	const { reset } = useContext(CartContext);
 
+	const handleStayInModal = (event) => {
+		// pressing either tab or shift+tab does nothing, keeping the user in the modal
+		if (event.key.toLowerCase() === "tab" || event.shiftKey) {
+			event.preventDefault();
+		}
+
+		// pressing escape triggers the start new order function
+		if (event.key.toLowerCase() === "escape") {
+			handleStartNewOrder();
+		}
+	};
+
 	const handleStartNewOrder = () => {
 		// reset cart
 		reset();
@@ -18,18 +30,27 @@ const CheckoutModal = ({ isModalOpen, setIsModalOpen }) => {
 		// remove the modal-open class from the document body
 		document.body.classList.remove("modal-open");
 
-        // scroll to top
-        window.scrollTo(0,0);
+		// scroll to top
+		window.scrollTo(0, 0);
 	};
 
 	return (
-		<Modal isOpen={isModalOpen}>
-			<div className={classes.orderConfirmation}>
+		<Modal
+			isOpen={isModalOpen}
+			role="dialog"
+			label="dialog-label"
+			desc="dialog-desc"
+		>
+			<div
+				className={classes.orderConfirmation}
+				onKeyDown={handleStayInModal}
+			>
 				<img src={Check} alt="" />
-				<h1>Order Confirmed</h1>
-				<p>We hope you enjoy your food!</p>
+				<h1 id="dialog-label">Order Confirmed</h1>
+				<p id="dialog-desc">We hope you enjoy your food!</p>
 				<CheckoutModalList />
 				<button
+					autoFocus
 					type="button"
 					onClick={handleStartNewOrder}
 					className={classes.newOrderBtn}
