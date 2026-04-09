@@ -74,7 +74,7 @@
 	/* Cart */
 	--cart-background: var(--c-white);
 	--cart-heading: var(--c-red);
-	--cart-empty-text: var(--c-rose-400);
+	--cart-empty-text: var(--c-rose-500);
 
 	--cart-item-amount: var(--c-red);
 	--cart-item-price: var(--c-rose-400);
