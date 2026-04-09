@@ -11,7 +11,7 @@ const CheckoutModalList = () => {
 		<div className={classes.orderSummary}>
 			<ul>
 				{cart.map((item) => (
-					<CheckoutModalListItem item={item} />
+					<CheckoutModalListItem key={item.id} item={item} />
 				))}
 			</ul>
 			<div className={classes.orderTotal}>
