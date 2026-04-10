@@ -9,7 +9,7 @@ const CheckoutModalList = () => {
 
 	return (
 		<div className={classes.orderSummary}>
-			<ul>
+			<ul role="list">
 				{cart.map((item) => (
 					<CheckoutModalListItem key={item.id} item={item} />
 				))}

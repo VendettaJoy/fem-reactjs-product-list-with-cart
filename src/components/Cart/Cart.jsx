@@ -27,7 +27,7 @@ const Cart = ({ setIsModalOpen }) => {
 	};
 
 	return (
-		<div role="region" className={classes.cart}>
+		<div role="region" className={classes.cart} aria-label="shopping cart">
 			<h2 className={classes.cartHeading}>
 				Your Cart ({totalItemsInCart})
 			</h2>
@@ -47,7 +47,9 @@ const Cart = ({ setIsModalOpen }) => {
 								alt=""
 								aria-hidden="true"
 							/>
-							<p>This is a <span>carbon-neutral</span> delivery</p>
+							<p>
+								This is a <span>carbon-neutral</span> delivery
+							</p>
 						</div>
 						<button
 							type="button"

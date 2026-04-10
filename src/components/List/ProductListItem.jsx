@@ -42,7 +42,7 @@ const ProductListItem = ({ id, image, category, name, price }) => {
 	};
 
 	return (
-		<li className={classes.item}>
+		<li role="listitem" className={classes.item}>
 			<div className={classes.container}>
 				<picture>
 					<source
@@ -63,7 +63,6 @@ const ProductListItem = ({ id, image, category, name, price }) => {
 						}
 					/>
 				</picture>
-
 				{/* if item amount is less than 1 */}
 				{amount < 1 && (
 					<button
@@ -76,7 +75,6 @@ const ProductListItem = ({ id, image, category, name, price }) => {
 						Add to Cart
 					</button>
 				)}
-
 				{/* if item amount is greater than or equal to 1 */}
 				{amount >= 1 && (
 					<div className={`${classes.pill} ${classes.btnAmount}`}>
@@ -109,10 +107,15 @@ const ProductListItem = ({ id, image, category, name, price }) => {
 					</div>
 				)}
 			</div>
-
-			<p className={classes.itemCategory} aria-label="product category">{category}</p>
-			<p className={classes.itemName} aria-label="product name">{name}</p>
-			<p className={classes.itemPrice} aria-label="product price">{itemPrice}</p>
+			<p className={classes.itemCategory} aria-label="product category">
+				{category}
+			</p>
+			<p className={classes.itemName} aria-label="product name">
+				{name}
+			</p>
+			<p className={classes.itemPrice} aria-label="product price">
+				{itemPrice}
+			</p>
 		</li>
 	);
 };

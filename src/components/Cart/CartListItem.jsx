@@ -11,8 +11,7 @@ const CartListItem = ({ item }) => {
 	const totalPrice = `$${(item.price * item.amount).toFixed(2)}`;
 
 	return (
-		<li className={classes.cartItem}>
-			{/* <img src={`${item.image}`} alt="" /> */}
+		<li role="listitem" className={classes.cartItem}>
 			<div className={classes.cartItemInfo}>
 				<p>{item.name}</p>
 				<div className={classes.cartItemAmtPrice}>
@@ -25,7 +24,7 @@ const CartListItem = ({ item }) => {
 				type="button"
 				onClick={() => removeItem(item)}
 				className={classes.cartItemDelBtn}
-                aria-label={`remove ${item.name} from cart`}
+				aria-label={`remove ${item.name} from cart`}
 			>
 				<img src={CrossIcon} alt="" />
 			</button>

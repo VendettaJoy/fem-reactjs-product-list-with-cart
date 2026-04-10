@@ -6,7 +6,7 @@ const CheckoutModalListItem = ({ item }) => {
 	const totalPrice = `$${(item.price * item.amount).toFixed(2)}`;
 
 	return (
-		<li className={classes.orderSummaryItem}>
+		<li role="listitem" className={classes.orderSummaryItem}>
 			<img src={`${item.image}`} alt="" />
 			<div>
 				<p>{item.name}</p>

@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import ProductListItem from "./ProductListItem";
-import classes from "./productList.module.css"
+import classes from "./productList.module.css";
 
 const ProductList = () => {
-    const { menu } = useContext(CartContext);
+	const { menu } = useContext(CartContext);
 
 	return (
 		<section>
-            <h1 className={classes.heading}>Desserts</h1>
-			<ul className={classes.list}>
+			<h1 className={classes.heading}>Desserts</h1>
+			<ul role="list" className={classes.list}>
 				{menu.map((item, index) => (
 					<ProductListItem
 						key={index}
