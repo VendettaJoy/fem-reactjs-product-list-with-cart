@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution]()
-- [Live Site]()
+- [Solution](https://www.frontendmentor.io/solutions/responsive-and-accessible-product-list-w-cart-using-reactjs-to0AcAdwUw)
+- [Live Site](https://tangerine-frangipane-dc2bc5.netlify.app/)
 
 ## My process
 
